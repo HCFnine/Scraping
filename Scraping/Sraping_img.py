@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
-
-
 from bs4 import BeautifulSoup
 import requests
 import os
@@ -13,15 +10,10 @@ os.makedirs('./img/', exist_ok=True)
 URL = 'http://www.ngchina.com.cn/animals/'
 
 
-# In[14]:
-
-
 html = requests.get(URL).text
 soup = BeautifulSoup(html, 'lxml')
 img_ul = soup.find_all('ul', {"class": "img_list"})
 
-
-# In[33]:
 
 
 for ul in img_ul:
@@ -31,9 +23,6 @@ for ul in img_ul:
         if url == "":
             print(True)
         print(url)
-
-
-# In[36]:
 
 
 for ul in img_ul:
